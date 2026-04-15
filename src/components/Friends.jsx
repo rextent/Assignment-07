@@ -1,25 +1,34 @@
-import React, { use } from 'react';
-import FriendCard from './FriendCard';
-
-const friendsPromise = fetch("/friends.json").then(res => res.json());
+import { useEffect, useState } from "react";
+import FriendCard from "./FriendCard";
 
 const Friends = () => {
-    const friends = use(friendsPromise);
-    // console.log("Friends", friends);
+  const [friends, setFriends] = useState([]);
 
-    return (
-        <div className='container mx-auto py-12 lg:py-20 px-4'>
-            
-                <h2 className='mb-3 text-2xl font-bold'>My Friends</h2>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
-                    {
-                        friends.map((friend, id) =>
-                            <FriendCard key={id} friend={friend}></FriendCard>)
-                    }
-                </div>
-            
-        </div>
-    );
+  useEffect(() => {
+    fetch("/friends.json")
+      .then((res) => res.json())
+      .then((data) => setFriends(data));
+  }, []);
+
+  return (
+    <div className="container mx-auto px-4 py-10 lg:py-16">
+      
+      {/* Heading */}
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-6">
+        Your Friends
+      </h2>
+
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        {friends.map((friend) => (
+          <FriendCard key={friend.id} friend={friend} />
+        ))}
+
+      </div>
+
+    </div>
+  );
 };
 
 export default Friends;

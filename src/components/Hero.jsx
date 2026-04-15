@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="bg-gray-100 py-12 lg:py-20 px-4">
+    <div className=" py-12 lg:py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
 
         {/* Title */}
