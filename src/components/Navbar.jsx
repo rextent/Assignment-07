@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     return (
-        <div className="shadow-sm">
+        <div className="shadow-sm bg-white">
             <div className="navbar container mx-auto bg-base-100 px-4">
 
                 {/* Logo */}

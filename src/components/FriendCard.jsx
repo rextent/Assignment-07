@@ -5,7 +5,7 @@ const FriendCard = ({ friend }) => {
     const statusStyle = {
         "overdue": "bg-red-100 text-red-500",
         "almost due": "bg-yellow-100 text-yellow-600",
-        "on-track": "bg-green-100 text-green-600",
+        "on-track": "bg-green-700 text-white",
     };
 
     return (
@@ -39,7 +39,7 @@ const FriendCard = ({ friend }) => {
             </div>
 
             {/* Status */}
-            <div className="mt-4">
+            <div className="mt-3">
                 <span
                     className={`px-3 py-1 text-xs rounded-full font-medium ${statusStyle[status]
                         }`}

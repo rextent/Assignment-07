@@ -10,15 +10,15 @@ const statsData = [
 const Stats = () => {
     return (
         <div className='container mx-auto'>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
                 {statsData.map((item) => (
-                    <div key={item.id} className="bg-white p-6 rounded-xl shadow text-center">
-                        <h3 className="text-2xl font-bold text-green-700">{item.value}</h3>
+                    <div key={item.id} className="bg-white p-5 py-15 rounded-xl shadow text-center gap-3 flex flex-col">
+                        <h3 className="text-3xl font-bold text-green-700">{item.value}</h3>
                         <p className="text-gray-500 text-sm">{item.label}</p>
                     </div>
                 ))}
             </div>
-            <div className='divider'></div>
+            {/* <div className='divider'></div> */}
         </div>
     );
 };
