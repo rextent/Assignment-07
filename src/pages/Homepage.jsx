@@ -1,10 +1,17 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Stats from '../components/Stats';
+import Friends from '../components/Friends';
+
 
 const Homepage = () => {
     return (
-        <Hero></Hero>
-        
+        <div>
+            <Hero></Hero>
+            <Stats></Stats>
+            <Friends></Friends>
+        </div>
+
     );
 };
 
