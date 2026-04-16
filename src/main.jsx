@@ -10,6 +10,7 @@ import Friends from './pages/Friends.jsx'
 import Timeline from './pages/Timeline.jsx'
 import Analytics from './pages/Analytics.jsx'
 import Notfound from './components/Notfound.jsx'
+import FriendDetails from './pages/FriendDetails.jsx'
 
 const router = createBrowserRouter(
   [
@@ -32,6 +33,11 @@ const router = createBrowserRouter(
         {
           path: "/analytics",
           Component: Analytics
+        },
+        {
+          path: "frienddetails/:id",
+          Component: FriendDetails,
+          loader: ()=> fetch("/friends.json")
         }
       ],
       errorElement: <Notfound></Notfound>

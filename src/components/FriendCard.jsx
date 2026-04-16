@@ -1,5 +1,7 @@
+import { Link } from "react-router";
+
 const FriendCard = ({ friend }) => {
-    const { picture, name, days_since_contact, tags, status } = friend;
+    const { picture, name, days_since_contact, tags, status, id } = friend;
 
     // 🔥 Dynamic status color
     const statusStyle = {
@@ -9,7 +11,7 @@ const FriendCard = ({ friend }) => {
     };
 
     return (
-        <div className="bg-white shadow-md rounded-2xl p-5 text-center hover:shadow-lg transition duration-300">
+        <Link to={`/frienddetails/${id}`} className="bg-white shadow-md rounded-2xl p-5 text-center hover:shadow-lg transition duration-300">
 
             {/* Profile Image */}
             <img
@@ -48,7 +50,7 @@ const FriendCard = ({ friend }) => {
                 </span>
             </div>
 
-        </div>
+        </Link>
     );
 };
 
