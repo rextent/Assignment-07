@@ -11,6 +11,7 @@ import Timeline from './pages/Timeline.jsx'
 import Analytics from './pages/Analytics.jsx'
 import Notfound from './components/Notfound.jsx'
 import FriendDetails from './pages/FriendDetails.jsx'
+import InteractionProvider from './context/InteractionContext.jsx'
 
 const router = createBrowserRouter(
   [
@@ -47,6 +48,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <InteractionProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </InteractionProvider>
   </StrictMode>,
 )
