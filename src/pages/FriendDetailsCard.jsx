@@ -4,10 +4,15 @@ import { useContext } from "react";
 import { InteractionContext } from "../context/InteractionContext";
 import { toast } from "react-toastify";
 
+const iconMap = {
+    Call: <FaPhoneAlt className="text-green-600" />,
+    Text: <BsChatDots className="text-purple-600" />,
+    Video: <FaVideo className="text-blue-600" />,
+};
 
 const FriendDetailsCard = ({ friend }) => {
 
-    const { addInteraction, interactions  } = useContext(InteractionContext);
+    const { addInteraction, interactions } = useContext(InteractionContext);
     const {
         picture,
         name,
@@ -114,28 +119,28 @@ const FriendDetailsCard = ({ friend }) => {
                         <h3 className="font-semibold mb-3">Quick Check-In</h3>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                            <button onClick={() => 
-                                {addInteraction(friend.id, "Call")
+                            <button onClick={() => {
+                                addInteraction(friend.id, "Call")
                                 toast.success(`Call with ${name}`);
-                                }}
+                            }}
                                 className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
                                 <FaPhoneAlt />
                                 <span className="text-sm mt-1">Call</span>
                             </button>
 
-                            <button onClick={() => 
-                                {addInteraction(friend.id, "Text")
+                            <button onClick={() => {
+                                addInteraction(friend.id, "Text")
                                 toast.success(`Text with ${name}`);
-                                }} 
+                            }}
                                 className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
                                 <BsChatDots />
                                 <span className="text-sm mt-1">Text</span>
                             </button>
 
-                            <button onClick={() => 
-                                {addInteraction(friend.id, "Video")
+                            <button onClick={() => {
+                                addInteraction(friend.id, "Video")
                                 toast.success(`Video with ${name}`);
-                                }} 
+                            }}
                                 className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
                                 <FaVideo />
                                 <span className="text-sm mt-1">Video</span>
@@ -149,9 +154,12 @@ const FriendDetailsCard = ({ friend }) => {
                         {friendInteractions.map((item) => (
                             <div key={item.id} className="flex justify-between border-b pb-2">
 
-                                <div>
-                                    <p className="font-medium">{item.type}</p>
-                                    <p className="text-xs text-gray-500">{item.note}</p>
+                                <div className='flex gap-3 items-center'>
+                                    {iconMap[item.type]}
+                                    <div>
+                                        <p className="font-semibold">{item.type}</p>
+                                        <p className="text-sm text-gray-500">{item.note}</p>
+                                    </div>
                                 </div>
 
                                 <span className="text-xs">
