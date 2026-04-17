@@ -2,6 +2,7 @@ import { FaPhoneAlt, FaVideo } from "react-icons/fa";
 import { BsChatDots } from "react-icons/bs";
 import { useContext } from "react";
 import { InteractionContext } from "../context/InteractionContext";
+import { toast } from "react-toastify";
 
 
 const FriendDetailsCard = ({ friend }) => {
@@ -113,17 +114,29 @@ const FriendDetailsCard = ({ friend }) => {
                         <h3 className="font-semibold mb-3">Quick Check-In</h3>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                            <button onClick={() => addInteraction(friend.id, "Call")} className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
+                            <button onClick={() => 
+                                {addInteraction(friend.id, "Call")
+                                toast.success(`Call with ${name}`);
+                                }}
+                                className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
                                 <FaPhoneAlt />
                                 <span className="text-sm mt-1">Call</span>
                             </button>
 
-                            <button onClick={() => addInteraction(friend.id, "Text")} className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
+                            <button onClick={() => 
+                                {addInteraction(friend.id, "Text")
+                                toast.success(`Text with ${name}`);
+                                }} 
+                                className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
                                 <BsChatDots />
                                 <span className="text-sm mt-1">Text</span>
                             </button>
 
-                            <button onClick={() => addInteraction(friend.id, "Video")} className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
+                            <button onClick={() => 
+                                {addInteraction(friend.id, "Video")
+                                toast.success(`Video with ${name}`);
+                                }} 
+                                className="border rounded-lg py-4 flex flex-col items-center hover:bg-gray-50">
                                 <FaVideo />
                                 <span className="text-sm mt-1">Video</span>
                             </button>

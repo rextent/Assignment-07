@@ -1,6 +1,16 @@
 import React from 'react';
 import { useContext } from 'react';
 import { InteractionContext } from '../context/InteractionContext';
+import { FaPhoneAlt, FaVideo } from 'react-icons/fa';
+import { BsChatDots } from 'react-icons/bs';
+
+
+
+const iconMap = {
+    Call: <FaPhoneAlt className="text-green-600" />,
+    Text: <BsChatDots className="text-purple-600" />,
+    Video: <FaVideo className="text-blue-600" />,
+};
 
 const Timeline = () => {
 
@@ -19,9 +29,12 @@ const Timeline = () => {
                 {interactions.map((item) => (
                     <div key={item.id} className="bg-white p-4 rounded-xl shadow flex justify-between">
 
-                        <div>
-                            <p className="font-semibold">{item.type}</p>
-                            <p className="text-sm text-gray-500">{item.note}</p>
+                        <div className='flex gap-3 items-center'>
+                            {iconMap[item.type]}
+                            <div>
+                                <p className="font-semibold">{item.type}</p>
+                                <p className="text-sm text-gray-500">{item.note}</p>
+                            </div>
                         </div>
 
                         <span className="text-xs text-gray-400">

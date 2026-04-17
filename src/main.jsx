@@ -12,6 +12,7 @@ import Analytics from './pages/Analytics.jsx'
 import Notfound from './components/Notfound.jsx'
 import FriendDetails from './pages/FriendDetails.jsx'
 import InteractionProvider from './context/InteractionContext.jsx'
+import { ToastContainer } from 'react-toastify'
 
 const router = createBrowserRouter(
   [
@@ -50,6 +51,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <InteractionProvider>
       <RouterProvider router={router}></RouterProvider>
+      <ToastContainer></ToastContainer>
     </InteractionProvider>
   </StrictMode>,
 )
