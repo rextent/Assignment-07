@@ -1,16 +1,23 @@
-# React + Vite
+Trainee Name: MD MASUD RANA
+Assigment: 07
+Batch: 13
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Assignment Name: KeenKeeper
 
-Currently, two official plugins are available:
+Overview: 
+This assignment was created to practice core React concepts by building a simple friendship tracking application. The main idea was to track interactions like calls, texts, and videos in an organized way.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+While working on this project, I focused on understanding how data flows between components, how state management works, and how to build a clean and responsive UI using React.
 
-## React Compiler
+Technologies Used:
+    * React.js
+    * React Router
+    * Context API
+    * Tailwind CSS & DaisyUI
+    * Recharts
+    * React Toastify
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Key Features
+1. Track interactions (Call, Text, Video) with real-time updates
+2. View all activities in a dynamic timeline with filtering options
+3. Analyze interaction data through a simple chart in the analytics page
